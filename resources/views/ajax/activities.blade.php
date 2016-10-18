@@ -25,3 +25,5 @@
         </div>
     </div>
 @endforeach
+
+@include('partials._scripts._activity')

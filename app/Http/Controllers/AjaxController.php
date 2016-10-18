@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Post;
-use App\Survey;
 use Illuminate\Http\Response;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Input;
@@ -31,6 +30,21 @@ class AjaxController extends Controller
                 abort(404);
                 break;
         }
+    }
+
+    public function getActivity($type, $id)
+    {
+        switch ($type) {
+            case 'post':
+                $info = Post::findOrFail($id);
+                break;
+            default:
+                # code...
+                break;
+        }
+        $head = view('ajax.activity_head')->withActivity($info)->render();
+        $body = view('ajax.activity_body')->withActivity($info)->render();
+        return response()->json(['head' => $head, 'body' => $body]);
     }
 
     private function showActivities()

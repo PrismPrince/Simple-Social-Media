@@ -13,6 +13,7 @@
                         <div class="">
                             @yield('p-c')
                         </div>
+                        @include('partials._modal_activity')
                         <div class="activities"></div>
                         <div class="text-center more-activities"></div>
                     </div>

@@ -23,6 +23,26 @@
         margin-bottom: 10px;
         margin-right: 5px;
     }
+    .activity-modal .h-i > img {
+        float: left;
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+        border-radius: 50%;
+    }
+    .activity-modal p {
+        margin-top: 5px;
+        padding: 0;
+    }
+    .activity-modal .a-i {
+        clear: both;
+    }
+    .activity-modal .a-i > img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        margin-right: 5px;
+    }
     .h-t {
         margin-top: 0;
     }
