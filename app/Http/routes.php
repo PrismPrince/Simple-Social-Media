@@ -43,6 +43,7 @@ Route::get('ajax/create/{view}', 'AjaxController@getCreate');
 Route::post('ajax/create/{view}', 'AjaxController@postCreate');
 Route::get('ajax/show/{view}/{id?}', 'AjaxController@getShow');
 Route::get('ajax/{activity}/{id}', 'AjaxController@getActivity');
+Route::post('ajax/com', 'AjaxController@com');
 
 // students
 Route::get('/', 'HomeController@index'); // done

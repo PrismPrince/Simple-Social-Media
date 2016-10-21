@@ -6,52 +6,12 @@
             });
         });
 
-        $('.a-o').popover({
-            'placement': 'bottom',
-            'trigger': 'click',
-            'html': true,
-            'container': 'body'
-        });
-
-        $('.a-o').on('shown.bs.popover', function() {
-            $('.act-edit').click(function(e){
-                e.preventDefault();
-                $('.activity-modal-edit').modal('show');
-            }).removeClass('act-edit');
-
-            $('.act-delete').click(function(e){
-                e.preventDefault();
-                $('.activity-modal-delete').modal('show');
-            }).removeClass('act-delete');
-        });
-
         $('.a-h-d').each(function() {
             return $(this).html(function(i, o){
                 $(this).attr('title', moment(o).format("ddd, MMM Do YYYY [at] h:mm a"));
                 return "" + moment(o).fromNow();
             });
         }).removeClass('a-h-d');
-
-        $('.a-f-a').each(function() {
-            return $(this).html(function(i, o){
-                $(this).attr('title', moment(o).format("ddd, MMM Do YYYY [at] h:mm a"));
-                return "Ends " + moment(o).fromNow();
-            });
-        }).removeClass('a-f-a');
-
-        $('.a-f-p').each(function() {
-            return $(this).html(function(i, o){
-                $(this).attr('title', moment(o).format("ddd, MMM Do YYYY [at] h:mm a"));
-                return "Starts " + moment(o).fromNow();
-            });
-        }).removeClass('a-f-p');
-
-        $('.a-f-e').each(function() {
-            return $(this).html(function(i, o){
-                $(this).attr('title', moment(o).format("ddd, MMM Do YYYY [at] h:mm a"));
-                return "Ended " + moment(o).fromNow();
-            });
-        }).removeClass('a-f-e');
     }
 
     $(document).ready(function() {

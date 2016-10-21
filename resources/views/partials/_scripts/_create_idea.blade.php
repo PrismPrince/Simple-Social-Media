@@ -70,8 +70,8 @@
             .css('background-position', '50%');
     });
 
-    var desc = $('form textarea[name="desc"]');
-    var submit = $('form button[type="submit"]');
+    var desc = $('form .data-post-desc');
+    var submit = $('form .submit-idea');
 
     var descStat;
 

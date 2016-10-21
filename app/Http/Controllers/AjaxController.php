@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Post;
+use App\Comment;
 use Illuminate\Http\Response;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Input;
@@ -37,14 +38,22 @@ class AjaxController extends Controller
         switch ($type) {
             case 'post':
                 $info = Post::findOrFail($id);
-                break;
-            default:
-                # code...
-                break;
+
+                $head = view('ajax.activity_head')->withActivity($info)->render();
+                $body = view('ajax.activity_body')->withActivity($info)->render();
+                $com = view('ajax.activity_comment')->withPost($id)->render();
+
+                return response()->json(['head' => $head, 'body' => $body, 'com' => $com]);
+
+            case 'comment':
+                $coms = Comment::where('post_id', $id)->get();
+
+                $view = view('ajax.activity_comments')->withComments($coms)->render();
+
+                return response()->json(['coms' => $view]);
+
+            default: return 0;
         }
-        $head = view('ajax.activity_head')->withActivity($info)->render();
-        $body = view('ajax.activity_body')->withActivity($info)->render();
-        return response()->json(['head' => $head, 'body' => $body]);
     }
 
     private function showActivities()
@@ -77,5 +86,10 @@ class AjaxController extends Controller
     {
         echo view('ajax.create_post')->render();
         return true;
+    }
+
+    public function com(Request $request)
+    {
+        return response()->json(['scom' => $request]);
     }
 }

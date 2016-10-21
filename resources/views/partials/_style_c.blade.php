@@ -64,42 +64,29 @@
 	.panel > .create-idea > form > .panel-body > .img {
 	}
 
-	.panel > .create-idea > form > .panel-body > .img > img {
+	.panel > .create-idea > form > .panel-body > .img > img,
+	.create-comment > form > .img > img {
 		width: 100%;
 		height: 100%;
 		border-radius: 50%;
 	}
 
-	.panel > .create-idea > form > .panel-body > .cont {
+	.panel > .create-idea > form > .panel-body > .cont,
+	.create-comment > form > .cont {
 		padding-left: 10px;
 	}
 
 	.panel > .create-idea > form > .panel-body > .cont > *,
-	.panel > .create-idea > form > .panel-body > .cont > #_answers > .ans-group > .ans {
+	.create-comment > form > .cont > .d {
 		border: none;
 	}
 
-	.panel > .create-idea > form > .panel-body > .cont > .d {
+	.panel > .create-idea > form > .panel-body > .cont > .d,
+	.create-comment > form > .cont > .d {
 		width: 100%;
 		padding: 5px 10px;
 		border-top: 1px solid #e5e5e5;
-	}
-
-	.panel > .create-idea > form > .panel-body > .cont > .d {
 		resize: none;
-	}
-	.panel > .create-idea > form > .panel-body > .cont > #_answers > .ans-group > .ans-dismiss {
-		right: 5px;
-		height: 20px;
-		width: 20px;
-		margin: 6px 0;
-		padding: 0;
-		border: 1px solid #e5e5e5;
-		border-radius: 50%;
-		position: absolute;
-		font-size: small;
-		color: #a9a9a9;
-		cursor: pointer;
 	}
 
 	.panel > .create-idea > form > .panel-body > .cont > .i-img {
@@ -140,5 +127,22 @@
 		background-color: rgba(0, 0, 0, .7);
 		color: #fff;
 		cursor: pointer;
+	}
+	.bar.title {
+		margin-bottom: 15px;
+		margin-top: 15px;
+	}
+	.bar.title {
+		height: 5px;
+    background-color: #bbb;
+    height: 5px;
+	}
+	.bar.title > div {
+		color: #bbb;
+		background: #e9ebee;
+		display: inline-block;
+		position: relative;
+		bottom: 9px;
+		padding: 0 10px;
 	}
 </style>
